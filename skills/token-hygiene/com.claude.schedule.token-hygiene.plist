@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Token Hygiene — Monthly launchd schedule (macOS)
+
+  Runs on the 1st of each month at 9:30 AM.
+
+  Install:
+    1. Copy to ~/Library/LaunchAgents/
+    2. Edit the script path to match your setup
+    3. launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.claude.schedule.token-hygiene.plist
+
+  Uninstall:
+    launchctl bootout gui/$(id -u)/com.claude.schedule.token-hygiene
+    rm ~/Library/LaunchAgents/com.claude.schedule.token-hygiene.plist
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.claude.schedule.token-hygiene</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>-c</string>
+        <!-- Change this path to your project directory -->
+        <string>cd "$HOME/your-project" &amp;&amp; .claude/scheduler-scripts/token-hygiene.sh --email=you@example.com</string>
+    </array>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin:$HOME/.local/bin</string>
+        <key>HOME</key>
+        <string>$HOME</string>
+    </dict>
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Day</key><integer>1</integer>
+        <key>Hour</key><integer>9</integer>
+        <key>Minute</key><integer>30</integer>
+    </dict>
+    <key>StandardOutPath</key>
+    <string>$HOME/.claude/logs/token-hygiene.log</string>
+    <key>StandardErrorPath</key>
+    <string>$HOME/.claude/logs/token-hygiene.error.log</string>
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>
