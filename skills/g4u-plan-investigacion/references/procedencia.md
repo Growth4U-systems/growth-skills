@@ -7,7 +7,7 @@ SHA-256 muestra anterior: `eac6833627f2983b5e789c875c729f70fcaeb72dbcd35b3c8ee82
 
 Redacción propia revisada de material anterior y principios generales de marketing. No incorpora instrucciones privadas ni atribuye a Growth4U la autoría de material externo. No se reclama autoría exclusiva del kit completo.
 
-Consulta [licencia local](../LICENSE). El documento general PROCEDENCIA.md del repositorio amplía esta información, pero no es necesario para usar la carpeta instalada. La licencia local acompaña la skill si se copia sola.
+Consulta [licencia local](../LICENSE). El documento general docs/marketing/PROCEDENCIA.md de GrowthSkills amplía esta información, pero no es necesario para usar la carpeta instalada. La licencia local acompaña la skill si se copia sola.
 
 
 ## Integración en GrowthSkills

@@ -9,7 +9,7 @@ Adaptación reescrita de [podcast-ops/SKILL.md](https://github.com/ericosiu/ai-m
 
 No incluye sus scripts, conectores, telemetría ni automatización. No hay afiliación ni equivalencia funcional.
 
-Consulta [licencia local](../LICENSE). El documento general PROCEDENCIA.md del repositorio amplía esta información, pero no es necesario para usar la carpeta instalada. La licencia local acompaña la skill si se copia sola.
+Consulta [licencia local](../LICENSE). El documento general docs/marketing/PROCEDENCIA.md de GrowthSkills amplía esta información, pero no es necesario para usar la carpeta instalada. La licencia local acompaña la skill si se copia sola.
 
 
 ## Integración en GrowthSkills
