@@ -1,0 +1,457 @@
+{
+  "source_repository": "Growth4U-systems/marketing-skills-25",
+  "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+  "skill_count": 25,
+  "skills": [
+    {
+      "id": "01",
+      "name": "g4u-plan-cortes-video",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "El paso de revisar el vídeo original queda dentro del procedimiento aunque las entradas obligatorias solo exigen transcripción. La muestra declara que no hay vídeo y entrega un corte con revisión pendiente: es razonable para preproducción, pero la frontera entre paso ejecutable y comprobación humana no está inequívocamente expresada.",
+      "change": "Convertir ese paso en gate externo de aprobación; entregar explícitamente estado Borrador y nunca afirmar que se revisó audio o imagen. Añadir muestra con marcas faltantes y cortes que perderían una negación.",
+      "files": [
+        "skills/g4u-plan-cortes-video/SKILL.md",
+        "skills/g4u-plan-cortes-video/assets/salida.md",
+        "skills/g4u-plan-cortes-video/references/ejemplo.md",
+        "skills/g4u-plan-cortes-video/references/casos-limite.md",
+        "skills/g4u-plan-cortes-video/references/procedencia.md",
+        "skills/g4u-plan-cortes-video/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-plan-cortes-video.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "02",
+      "name": "g4u-brief-seo",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "El procedimiento exige revisar solapamientos aunque páginas existentes son opcionales. La muestra marca esas páginas no aportadas y no inventa canibalización: correcto. Falta un criterio explícito para separar brief redactable de investigación pendiente cuando hay consultas de intenciones mixtas.",
+      "change": "Añadir un caso con consulta ambigua y dos fuentes fechadas; mostrar qué decisión queda suspendida y qué se puede redactar. Incluir evidencia por sección y matriz existente/nueva, sin exigir APIs.",
+      "files": [
+        "skills/g4u-brief-seo/SKILL.md",
+        "skills/g4u-brief-seo/assets/salida.md",
+        "skills/g4u-brief-seo/references/ejemplo.md",
+        "skills/g4u-brief-seo/references/casos-limite.md",
+        "skills/g4u-brief-seo/references/procedencia.md",
+        "skills/g4u-brief-seo/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-brief-seo.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "03",
+      "name": "g4u-contenido-con-fuentes",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "Fecha de vigencia es opcional, mientras el procedimiento pide comprobar fecha. Esto permite redactar con hechos potencialmente caducados si no se deja una suspensión explícita para afirmaciones sensibles al tiempo. El ejemplo funcional simple no prueba el caso de fuentes contradictorias que la skill menciona.",
+      "change": "Incluir tabla fuente/fecha/alcance/afirmación y un ejemplo conflictivo: conservar ambas versiones o excluir la afirmación, sin decidir verdad por orden de aparición. Completar el Estado final común.",
+      "files": [
+        "skills/g4u-contenido-con-fuentes/SKILL.md",
+        "skills/g4u-contenido-con-fuentes/assets/salida.md",
+        "skills/g4u-contenido-con-fuentes/references/ejemplo.md",
+        "skills/g4u-contenido-con-fuentes/references/casos-limite.md",
+        "skills/g4u-contenido-con-fuentes/references/procedencia.md",
+        "skills/g4u-contenido-con-fuentes/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-contenido-con-fuentes.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "04",
+      "name": "g4u-email-revision-humana",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "La muestra resuelve un correo de ayuda y deja permiso/canal bloqueados correctamente. No hay fallo sustantivo adicional verificado; la regla de legitimidad es general y no debe venderse como validación legal o de consentimiento.",
+      "change": "Añadir casos de finalidad incompatible y permiso retirado, distinguir condiciones para redactar de condiciones para usar el texto, y definir longitud o variantes cuando se aporten.",
+      "files": [
+        "skills/g4u-email-revision-humana/SKILL.md",
+        "skills/g4u-email-revision-humana/assets/salida.md",
+        "skills/g4u-email-revision-humana/references/ejemplo.md",
+        "skills/g4u-email-revision-humana/references/casos-limite.md",
+        "skills/g4u-email-revision-humana/references/procedencia.md",
+        "skills/g4u-email-revision-humana/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-email-revision-humana.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "05",
+      "name": "g4u-ficha-experimento",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "Contradicción concreta: métrica con numerador/denominador, ventana, instrumentación y regla de decisión son entradas obligatorias, y se ordena detenerse si faltan. Las entradas de la muestra no las proporcionan; el resultado introduce una ventana de 14 días, umbral de 5 puntos, eventos y asignación. Están etiquetados como propuestas sintéticas, por lo que no son resultados falsos, pero la muestra no cumple el bloqueo que enseña la skill.",
+      "change": "Elegir una política consistente: aportar esos parámetros en Entradas resueltas y mantener el bloqueo, o hacerlos campos a proponer pendientes de aprobación. Añadir ejemplo negativo con datos ausentes. No convertir el umbral de 5 puntos en recomendación universal.",
+      "files": [
+        "skills/g4u-ficha-experimento/SKILL.md",
+        "skills/g4u-ficha-experimento/assets/salida.md",
+        "skills/g4u-ficha-experimento/references/ejemplo.md",
+        "skills/g4u-ficha-experimento/references/casos-limite.md",
+        "skills/g4u-ficha-experimento/references/procedencia.md",
+        "skills/g4u-ficha-experimento/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-ficha-experimento.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "06",
+      "name": "g4u-plan-investigacion",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "El ejemplo cierra al tener una observación y una explicación por sesión; ese criterio indica completitud de la recogida, no que haya evidencia suficiente para elegir entre guías. La distinción existe parcialmente mediante no generalizar, pero se puede explicitar un resultado inconcluso aun completando ambas sesiones.",
+      "change": "Separar cierre logístico, suficiencia para decisión y regla de continuación cuando las observaciones discrepan. Añadir ejemplo de dos sesiones que apuntan en sentidos distintos.",
+      "files": [
+        "skills/g4u-plan-investigacion/SKILL.md",
+        "skills/g4u-plan-investigacion/assets/salida.md",
+        "skills/g4u-plan-investigacion/references/ejemplo.md",
+        "skills/g4u-plan-investigacion/references/casos-limite.md",
+        "skills/g4u-plan-investigacion/references/procedencia.md",
+        "skills/g4u-plan-investigacion/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-plan-investigacion.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "07",
+      "name": "g4u-guion-entrevista",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "No se observa pregunta inductiva importante en la muestra. El cierre permite pedir que no se conserven respuestas, pero un registro sin identidad necesita un mecanismo para localizar la contribución a retirar; ese mecanismo no está desarrollado.",
+      "change": "Definir retirada durante la sesión o código aleatorio entregado al participante y plazo de retención; no solicitar identidad innecesaria. Añadir reparto orientativo de los 15 minutos y pregunta de recuperación.",
+      "files": [
+        "skills/g4u-guion-entrevista/SKILL.md",
+        "skills/g4u-guion-entrevista/assets/salida.md",
+        "skills/g4u-guion-entrevista/references/ejemplo.md",
+        "skills/g4u-guion-entrevista/references/casos-limite.md",
+        "skills/g4u-guion-entrevista/references/procedencia.md",
+        "skills/g4u-guion-entrevista/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-guion-entrevista.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "08",
+      "name": "g4u-sintesis-entrevistas",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "N1 describe que alguien agrupó, no que agrupar le ayudara. La formulación del resultado «ayuda a estructurar el relato» es una interpretación ligera que conviene etiquetar, ya que la skill exige separar observación literal e interpretación. No se afirma productividad ni una mejora causal.",
+      "change": "Sustituir por «N1 relata que agrupó antes de priorizar» y dejar utilidad como hipótesis. Añadir varias notas de una misma persona para ejercitar deduplicación.",
+      "files": [
+        "skills/g4u-sintesis-entrevistas/SKILL.md",
+        "skills/g4u-sintesis-entrevistas/assets/salida.md",
+        "skills/g4u-sintesis-entrevistas/references/ejemplo.md",
+        "skills/g4u-sintesis-entrevistas/references/casos-limite.md",
+        "skills/g4u-sintesis-entrevistas/references/procedencia.md",
+        "skills/g4u-sintesis-entrevistas/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-sintesis-entrevistas.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "09",
+      "name": "g4u-encuesta-diagnostico",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "Q3 pregunta por «ese momento» a todas las personas, aunque Q1 permita no haber organizado tareas. Solo se explicita omitir Q2 al responder no; tampoco se define recorrido de prefiero no responder. Puede producir una respuesta sin episodio de referencia.",
+      "change": "Especificar árbol: sí → Q2/Q3; no o prefiero no responder → cierre o pregunta alternativa no presupuesta. Declarar selección única en Q2 y permitir empates si no se puede elegir una sola dificultad.",
+      "files": [
+        "skills/g4u-encuesta-diagnostico/SKILL.md",
+        "skills/g4u-encuesta-diagnostico/assets/salida.md",
+        "skills/g4u-encuesta-diagnostico/references/ejemplo.md",
+        "skills/g4u-encuesta-diagnostico/references/casos-limite.md",
+        "skills/g4u-encuesta-diagnostico/references/procedencia.md",
+        "skills/g4u-encuesta-diagnostico/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-encuesta-diagnostico.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "10",
+      "name": "g4u-comparativa-alternativas",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "La muestra trata correctamente la lista manual y el esfuerzo desconocido. No se encuentra defecto sustantivo adicional; falta mostrar qué hacer con fichas de fechas distintas o criterios no comparables.",
+      "change": "Añadir fuente/fecha por celda y ejemplo de comparación suspendida por unidades o planes diferentes. Mantener costes desconocidos visibles.",
+      "files": [
+        "skills/g4u-comparativa-alternativas/SKILL.md",
+        "skills/g4u-comparativa-alternativas/assets/salida.md",
+        "skills/g4u-comparativa-alternativas/references/ejemplo.md",
+        "skills/g4u-comparativa-alternativas/references/casos-limite.md",
+        "skills/g4u-comparativa-alternativas/references/procedencia.md",
+        "skills/g4u-comparativa-alternativas/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-comparativa-alternativas.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "11",
+      "name": "g4u-posicionamiento",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "No hay defecto específico demostrado: la necesidad se etiqueta hipotética y se invita a comprobar si la alternativa actual basta. La muestra no tensiona el método con segmentos de necesidades incompatibles.",
+      "change": "Añadir segmento excluido con necesidad incompatible y una tabla diferencia/prueba/valor supuesto/condición de rechazo. No convertir beneficios plausibles en posicionamiento validado.",
+      "files": [
+        "skills/g4u-posicionamiento/SKILL.md",
+        "skills/g4u-posicionamiento/assets/salida.md",
+        "skills/g4u-posicionamiento/references/ejemplo.md",
+        "skills/g4u-posicionamiento/references/casos-limite.md",
+        "skills/g4u-posicionamiento/references/procedencia.md",
+        "skills/g4u-posicionamiento/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-posicionamiento.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "12",
+      "name": "g4u-matriz-mensajes",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "El procedimiento dice que cada respuesta termina con una acción proporcionada. La segunda respuesta de la matriz solo niega predicción/decisión y no incluye acción; la acción global posterior no cumple literalmente la condición por respuesta.",
+      "change": "Añadir columna de siguiente acción por fila o cambiar la instrucción a una acción global. Para necesidad incompatible, permitir recomendar no continuar en vez de forzar CTA.",
+      "files": [
+        "skills/g4u-matriz-mensajes/SKILL.md",
+        "skills/g4u-matriz-mensajes/assets/salida.md",
+        "skills/g4u-matriz-mensajes/references/ejemplo.md",
+        "skills/g4u-matriz-mensajes/references/casos-limite.md",
+        "skills/g4u-matriz-mensajes/references/procedencia.md",
+        "skills/g4u-matriz-mensajes/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-matriz-mensajes.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "13",
+      "name": "g4u-mapa-contenidos",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "adaptacion-publica-MIT",
+      "finding": "La ficha B remite a una sección de prioridad manual que no se explicita en la descripción de guía A. Puede ser una sección prevista, no un enlace roto comprobado; conviene que las dependencias señalen pieza y sección concretas antes de aprobar el mapa.",
+      "change": "Dar IDs a piezas y secciones, marcar destino propuesto/no creado y comprobar que la cobertura prometida existe. Mantener Q2 explícitamente pendiente.",
+      "files": [
+        "skills/g4u-mapa-contenidos/SKILL.md",
+        "skills/g4u-mapa-contenidos/assets/salida.md",
+        "skills/g4u-mapa-contenidos/references/ejemplo.md",
+        "skills/g4u-mapa-contenidos/references/casos-limite.md",
+        "skills/g4u-mapa-contenidos/references/procedencia.md",
+        "skills/g4u-mapa-contenidos/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-mapa-contenidos.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "14",
+      "name": "g4u-calendario-editorial",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "Capacidad por rol es obligatoria. La entrada de la muestra solo define redacción y revisión, mientras la salida asigna decisión al rol Aprobación el día 5 sin declarar su disponibilidad. La frase de autocomprobación de todas las entradas no resuelve ese vacío.",
+      "change": "Añadir capacidad y disponibilidad del aprobador en la entrada o dejar la decisión con fecha pendiente. Incorporar caso con revisión rechazada que retorna a redacción y consume capacidad.",
+      "files": [
+        "skills/g4u-calendario-editorial/SKILL.md",
+        "skills/g4u-calendario-editorial/assets/salida.md",
+        "skills/g4u-calendario-editorial/references/ejemplo.md",
+        "skills/g4u-calendario-editorial/references/casos-limite.md",
+        "skills/g4u-calendario-editorial/references/procedencia.md",
+        "skills/g4u-calendario-editorial/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-calendario-editorial.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "15",
+      "name": "g4u-reutilizacion-activo",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "adaptacion-publica-MIT",
+      "finding": "La ficha se vincula a A1 y el checklist a A1/A2, y se conserva la limitación manual. No hay fallo específico demostrado. El ejemplo deja derechos reales sin acreditar porque es sintético; esto no es una licencia para reutilizar un activo real sin permiso.",
+      "change": "Separar permiso para analizar, transformar y distribuir; añadir estado por derivado y un ejemplo descartado por perder contexto. No exigir permisos reales para usar la muestra sintética del propio kit.",
+      "files": [
+        "skills/g4u-reutilizacion-activo/SKILL.md",
+        "skills/g4u-reutilizacion-activo/assets/salida.md",
+        "skills/g4u-reutilizacion-activo/references/ejemplo.md",
+        "skills/g4u-reutilizacion-activo/references/casos-limite.md",
+        "skills/g4u-reutilizacion-activo/references/procedencia.md",
+        "skills/g4u-reutilizacion-activo/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-reutilizacion-activo.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "16",
+      "name": "g4u-brief-campana",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "El ejemplo busca que lectores comprendan grupos pero mide completar una guía. La finalización es un proxy de avance, no evidencia de comprensión; no se explicita esa limitación en la sección de medición.",
+      "change": "Etiquetar finalización como proxy e incluir tarea de comprensión observable, o cambiar objetivo a finalización. Especificar ventana/denominador para la comprobación de comprensión sin identificar lectores.",
+      "files": [
+        "skills/g4u-brief-campana/SKILL.md",
+        "skills/g4u-brief-campana/assets/salida.md",
+        "skills/g4u-brief-campana/references/ejemplo.md",
+        "skills/g4u-brief-campana/references/casos-limite.md",
+        "skills/g4u-brief-campana/references/procedencia.md",
+        "skills/g4u-brief-campana/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-brief-campana.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "17",
+      "name": "g4u-estructura-landing",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "La muestra conserva límites y no finge destino real. No hay fallo específico confirmado; accesibilidad está como opcional y no se convierte en criterios concretos de estructura textual.",
+      "change": "Añadir jerarquía H1/H2 sugerida, texto de enlace comprensible aislado y checklist de condiciones de oferta. Mantener renderizado, contraste y navegación como verificaciones posteriores.",
+      "files": [
+        "skills/g4u-estructura-landing/SKILL.md",
+        "skills/g4u-estructura-landing/assets/salida.md",
+        "skills/g4u-estructura-landing/references/ejemplo.md",
+        "skills/g4u-estructura-landing/references/casos-limite.md",
+        "skills/g4u-estructura-landing/references/procedencia.md",
+        "skills/g4u-estructura-landing/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-estructura-landing.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "18",
+      "name": "g4u-revision-conversion",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "adaptacion-publica-MIT",
+      "finding": "La muestra demuestra correctamente tres cambios textuales y excluye contraste/responsive/velocidad. No se confirma un defecto sustantivo; el plan de validación no incluye prioridad por riesgo o dependencia entre cambios.",
+      "change": "Añadir orden cualitativo: primero afirmación engañosa, después claridad de CTA, después preferencia editorial. No convertir este orden en scoring o promesa de uplift.",
+      "files": [
+        "skills/g4u-revision-conversion/SKILL.md",
+        "skills/g4u-revision-conversion/assets/salida.md",
+        "skills/g4u-revision-conversion/references/ejemplo.md",
+        "skills/g4u-revision-conversion/references/casos-limite.md",
+        "skills/g4u-revision-conversion/references/procedencia.md",
+        "skills/g4u-revision-conversion/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-revision-conversion.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "19",
+      "name": "g4u-edicion-texto",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "El ejemplo retira productividad no demostrada y aclara manualidad de forma correcta. No hay defecto adicional confirmado. Si dos hechos autorizados se contradicen, el caso límite pide no inventar pero no muestra cómo devolver una edición parcial.",
+      "change": "Añadir muestra con un término obligatorio y fuentes incompatibles; mantener texto no afectado, señalar bloqueo factual en la oración afectada y registrar cambios completos.",
+      "files": [
+        "skills/g4u-edicion-texto/SKILL.md",
+        "skills/g4u-edicion-texto/assets/salida.md",
+        "skills/g4u-edicion-texto/references/ejemplo.md",
+        "skills/g4u-edicion-texto/references/casos-limite.md",
+        "skills/g4u-edicion-texto/references/procedencia.md",
+        "skills/g4u-edicion-texto/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-edicion-texto.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "20",
+      "name": "g4u-brief-recurso-descargable",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "adaptacion-publica-MIT",
+      "finding": "La muestra propone un ejercicio y no convierte respuestas sintéticas en testimonios: correcto. No demuestra efectividad ni desarrolla criterios de accesibilidad o comprensión para formatos distintos del texto.",
+      "change": "Precisar qué observar, qué errores implican revisar instrucciones y qué evidencia mínima aceptar para distribución. Añadir caso con necesidad no sustentada que debe bloquearse.",
+      "files": [
+        "skills/g4u-brief-recurso-descargable/SKILL.md",
+        "skills/g4u-brief-recurso-descargable/assets/salida.md",
+        "skills/g4u-brief-recurso-descargable/references/ejemplo.md",
+        "skills/g4u-brief-recurso-descargable/references/casos-limite.md",
+        "skills/g4u-brief-recurso-descargable/references/procedencia.md",
+        "skills/g4u-brief-recurso-descargable/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-brief-recurso-descargable.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "21",
+      "name": "g4u-secuencia-bienvenida",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "El segundo mensaje depende de no haber completado la ayuda, pero la entrada no especifica una señal autorizada para conocerlo. El ejemplo no afirma haberlo medido; queda un vacío de operacionalización, no un seguimiento oculto ejecutado.",
+      "change": "Definir señal voluntaria mínima o estado desconocido que bloquee automatización; no convertir falta de dato en no completado. Mantener máximo dos contactos y validación separada de permisos.",
+      "files": [
+        "skills/g4u-secuencia-bienvenida/SKILL.md",
+        "skills/g4u-secuencia-bienvenida/assets/salida.md",
+        "skills/g4u-secuencia-bienvenida/references/ejemplo.md",
+        "skills/g4u-secuencia-bienvenida/references/casos-limite.md",
+        "skills/g4u-secuencia-bienvenida/references/procedencia.md",
+        "skills/g4u-secuencia-bienvenida/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-secuencia-bienvenida.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "22",
+      "name": "g4u-secuencia-educativa",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "El procedimiento del caso límite pide una prueba de comprensión por paso. El ejemplo solo propone comparar conceptos y elegir procedimiento: acciones educativas, no un criterio explícito para comprobar comprensión. Además D1/D2 no resueltas requieren una señal que aquí no se aporta.",
+      "change": "Añadir tarea de clasificación o explicación voluntaria con criterio de corrección; definir desconocido como tal y evitar inferencias por apertura de email. No convertir medición en seguimiento invisible.",
+      "files": [
+        "skills/g4u-secuencia-educativa/SKILL.md",
+        "skills/g4u-secuencia-educativa/assets/salida.md",
+        "skills/g4u-secuencia-educativa/references/ejemplo.md",
+        "skills/g4u-secuencia-educativa/references/casos-limite.md",
+        "skills/g4u-secuencia-educativa/references/procedencia.md",
+        "skills/g4u-secuencia-educativa/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-secuencia-educativa.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "23",
+      "name": "g4u-onboarding-primer-valor",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "La muestra añade ayuda para quien no sabe agrupar pero no una ruta concreta para un fallo al crear grupo o guardar prioridad; el procedimiento sí pide recuperación cuando hay bloqueo. No es prueba de que el producto falle, sino cobertura incompleta del flujo propuesto.",
+      "change": "Añadir estado de error, acción de reintento/ayuda y preservación del trabajo para un fallo sintético. Mantener requisitos de seguridad aunque se aplace configuración.",
+      "files": [
+        "skills/g4u-onboarding-primer-valor/SKILL.md",
+        "skills/g4u-onboarding-primer-valor/assets/salida.md",
+        "skills/g4u-onboarding-primer-valor/references/ejemplo.md",
+        "skills/g4u-onboarding-primer-valor/references/casos-limite.md",
+        "skills/g4u-onboarding-primer-valor/references/procedencia.md",
+        "skills/g4u-onboarding-primer-valor/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-onboarding-primer-valor.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "24",
+      "name": "g4u-plan-medicion",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "redaccion-propia-conservada-y-revisada",
+      "finding": "La tasa de error usa sesiones que inician ejercicio como denominador, pero los eventos propuestos solo son guia_iniciada, ejercicio_completado y ejercicio_error. No se declara un evento de inicio de ejercicio ni una regla que lo equipare a inicio de guía; el denominador no es derivable inequívocamente de lo propuesto.",
+      "change": "Añadir ejercicio_iniciado con orden y elegibilidad, o redefinir tasa de error sobre quienes inician guía y renombrar la métrica. Añadir ejemplo de evento faltante, denominador cero y duplicados.",
+      "files": [
+        "skills/g4u-plan-medicion/SKILL.md",
+        "skills/g4u-plan-medicion/assets/salida.md",
+        "skills/g4u-plan-medicion/references/ejemplo.md",
+        "skills/g4u-plan-medicion/references/casos-limite.md",
+        "skills/g4u-plan-medicion/references/procedencia.md",
+        "skills/g4u-plan-medicion/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-plan-medicion.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    },
+    {
+      "id": "25",
+      "name": "g4u-informe-resultados",
+      "source_commit": "4d54e83f25e37b2ee467f6cd216ec70211d1e228",
+      "origin": "adaptacion-publica-MIT",
+      "finding": "Los cálculos de la muestra son correctos, comprobados con Python. La validación menciona ceros pero no explicita qué hacer con variación relativa cuando la tasa base es cero: queda una condición analítica importante para desarrollar.",
+      "change": "Añadir muestra A=0 con denominador positivo: diferencia absoluta calculable, variación relativa no definida. Separar denominador cero, dato ausente y numerador cero. No etiquetar significancia sin un diseño adecuado.",
+      "files": [
+        "skills/g4u-informe-resultados/SKILL.md",
+        "skills/g4u-informe-resultados/assets/salida.md",
+        "skills/g4u-informe-resultados/references/ejemplo.md",
+        "skills/g4u-informe-resultados/references/casos-limite.md",
+        "skills/g4u-informe-resultados/references/procedencia.md",
+        "skills/g4u-informe-resultados/LICENSE"
+      ],
+      "fixture": "tests/fixtures/marketing/g4u-informe-resultados.json",
+      "verification": "tests/test_marketing.py; cases are expected responses, not model executions"
+    }
+  ]
+}
