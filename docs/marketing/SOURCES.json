@@ -1,0 +1,178 @@
+{
+  "reference": [
+    {
+      "repository": "ericosiu/ai-marketing-skills",
+      "revision": "8088e1a167804d5615f6e982f62e5b4b6ff8f2f1",
+      "path": "README.md",
+      "url": "https://github.com/ericosiu/ai-marketing-skills/blob/8088e1a167804d5615f6e982f62e5b4b6ff8f2f1/README.md",
+      "sha256": "8864829f7f34a06270f85cb0fe01bea53de2f07596559512a5d41e45d9c94cc4"
+    },
+    {
+      "repository": "ericosiu/ai-marketing-skills",
+      "revision": "8088e1a167804d5615f6e982f62e5b4b6ff8f2f1",
+      "path": "LICENSE",
+      "url": "https://github.com/ericosiu/ai-marketing-skills/blob/8088e1a167804d5615f6e982f62e5b4b6ff8f2f1/LICENSE",
+      "sha256": "01be386d352f53d829696a15740dc6e625aea20ac2a625cee20379d6e0540b2b"
+    },
+    {
+      "repository": "ericosiu/ai-marketing-skills",
+      "revision": "8088e1a167804d5615f6e982f62e5b4b6ff8f2f1",
+      "path": "seo-ops/SKILL.md",
+      "url": "https://github.com/ericosiu/ai-marketing-skills/blob/8088e1a167804d5615f6e982f62e5b4b6ff8f2f1/seo-ops/SKILL.md",
+      "sha256": "2ce171cf5e83f7ca7d15a153879f5e98eee0c95150a2478dfe83344d384e04ae"
+    },
+    {
+      "repository": "ericosiu/ai-marketing-skills",
+      "revision": "8088e1a167804d5615f6e982f62e5b4b6ff8f2f1",
+      "path": "podcast-ops/SKILL.md",
+      "url": "https://github.com/ericosiu/ai-marketing-skills/blob/8088e1a167804d5615f6e982f62e5b4b6ff8f2f1/podcast-ops/SKILL.md",
+      "sha256": "53966125a0f8c108269fef52cc8e7309afa317bce860ac608f2adf12ee8226d2"
+    },
+    {
+      "repository": "ericosiu/ai-marketing-skills",
+      "revision": "8088e1a167804d5615f6e982f62e5b4b6ff8f2f1",
+      "path": "conversion-ops/SKILL.md",
+      "url": "https://github.com/ericosiu/ai-marketing-skills/blob/8088e1a167804d5615f6e982f62e5b4b6ff8f2f1/conversion-ops/SKILL.md",
+      "sha256": "56934509a15f92376c0fc40f6b32b7082661072ae77235e0fb39cfca1201ecbc"
+    },
+    {
+      "repository": "ericosiu/ai-marketing-skills",
+      "revision": "8088e1a167804d5615f6e982f62e5b4b6ff8f2f1",
+      "path": "growth-engine/SKILL.md",
+      "url": "https://github.com/ericosiu/ai-marketing-skills/blob/8088e1a167804d5615f6e982f62e5b4b6ff8f2f1/growth-engine/SKILL.md",
+      "sha256": "c9c115ce18d60644ca21c949691142b04d75f8cd14a15366fa882033eab4ebc2"
+    }
+  ],
+  "prior_resources": [
+    {
+      "id": "01",
+      "template_sha256": "8500357952e74bdc9e3a1b5794825f3168b440761709e7dcc353636624c2e64a",
+      "example_sha256": "fcfb5e63017edb09e8f14e64dc6d686f5587f25e79518225633c1297bb92bac8"
+    },
+    {
+      "id": "02",
+      "template_sha256": "15585b743df3067b16425f7982fe1e5b76ee0ec97376f834b1d779ba5e25508b",
+      "example_sha256": "101f41509989ccf9bb83f4f6521e840ada287a1d5415962cf1d6f5237e2d193f"
+    },
+    {
+      "id": "03",
+      "template_sha256": "89cc04abae1d325a54f0a781f762a81815a0a2e510b934770a6239fff2dd0bd7",
+      "example_sha256": "7de72a18625ffce803a81ab8112ef70a50e12c639f72e2f8eb6d7cd65a08248d"
+    },
+    {
+      "id": "04",
+      "template_sha256": "59bfcf334dfad8de128a62bae54cc6b3b7f9ca6fd9faeda2bdb1f83338cede9f",
+      "example_sha256": "ebcfdefe38f4b7e7394eff63eaf69c56c59e89344cc8ce1bc30fec85398b05be"
+    },
+    {
+      "id": "05",
+      "template_sha256": "4ac7ee655e460d1a5f47506cce95a7ea9960bb39f293967a4e7c7be157815a39",
+      "example_sha256": "1405d41ae9e56a3d8ceac241274be9d261938b2e2f74b3415218301780d26a5f"
+    },
+    {
+      "id": "06",
+      "template_sha256": "3e4264aae923bf477972efff6e45b0b6dfb21e2c03ebdbd8ce5401f60c81a540",
+      "example_sha256": "eac6833627f2983b5e789c875c729f70fcaeb72dbcd35b3c8ee82eb3746ff24a"
+    },
+    {
+      "id": "07",
+      "template_sha256": "66f13c894ceaf27fb94bbb63ee12834d3be58281397b8f4bdbdc7a295e95ce1d",
+      "example_sha256": "a7c24d4fc31fab8e7eb57a7109a5d85bbd59f00d67526a76b2bb07e71297c01a"
+    },
+    {
+      "id": "08",
+      "template_sha256": "316cae5d9e79f4ae179fc6468fa8ead10659ea305159ab2ce2798843b0cd1e6e",
+      "example_sha256": "5f60f7c3945e31779d1e98c9338984d567aa3f8fb2ec2620ebeb8d8b62ec25e9"
+    },
+    {
+      "id": "09",
+      "template_sha256": "943d16fb33a87b2fce3c45efb79f501f0cebf37748cc12b9493d4e3221732e2d",
+      "example_sha256": "5f564c72e5e5bf33de898581f781ec997c2010dbda1822c2b16e4b5256fb576d"
+    },
+    {
+      "id": "10",
+      "template_sha256": "6404762539ca2f6d02e94dd3daa197b9f4ae6c63e592a7291eeba6963dd5ab88",
+      "example_sha256": "098df4ccf4e0ac85a12666225ef08c3b25beae96c4ccc3b4cb749f3b54dcdeff"
+    },
+    {
+      "id": "11",
+      "template_sha256": "3fb54112b147c8d5e0ae8a27baaa20440ee180cf7c4b0f2e4f50466529d3dbe4",
+      "example_sha256": "c25f3d7aab85ff28d36eaafc54640ada43177d21eb2621a61b1b68858ab386ee"
+    },
+    {
+      "id": "12",
+      "template_sha256": "5595d56021181af3e5dd010ba4f0bc54f3cc899a785bd812f5e0d9293d5a318a",
+      "example_sha256": "8b7dd052c881fa25f02d7e7162474cadd1e5eafca3a0554bfc89a5c815b20d1e"
+    },
+    {
+      "id": "13",
+      "template_sha256": "23e36be7c7e017b41873a3c3649c0ef471a69b60dbb89c5674a42d5161157cd0",
+      "example_sha256": "2de64f0f5cff231061da991a8575034506e09f049c1055520bb9ad8dcc27ac06"
+    },
+    {
+      "id": "14",
+      "template_sha256": "a1bb5cc3628025469047152119d7d40f90aaa680920e4d289611c34eb705710a",
+      "example_sha256": "c46e389f156733f58370f3534bbbaedc9d68b4c8f783462dfbbe7198afca06c5"
+    },
+    {
+      "id": "15",
+      "template_sha256": "2bcbe10c177fb890593df13bdf3bb395f6fccecdff763dee56d70a554966e90d",
+      "example_sha256": "33d3989739c4a009d5e4825b637bddb241dbfb5b09af68946fd885d1d546901a"
+    },
+    {
+      "id": "16",
+      "template_sha256": "316904568b6dc58a1eb20d035395592809cacd734b8011b6c66eb8dd46366073",
+      "example_sha256": "c0ba215a5f282da7e08cc0626e95c45a7ad647a362683f073c30bcf80fcf4371"
+    },
+    {
+      "id": "17",
+      "template_sha256": "be6476d0eb8b11398fd4460cb4614a21a55e427edb329104b9d9e68693e85f0b",
+      "example_sha256": "d8fc575602740b9f93ea8eeed4b054275c00a1f2c09df7dc47d2d5d8c021c045"
+    },
+    {
+      "id": "18",
+      "template_sha256": "52bea54a327827b8797787e5ac68aa586a07d0ac7b29cd4ada283f191fe7ab71",
+      "example_sha256": "bcda072a72dcc04812c526195df6b495a6dbb9f4e4f14ea61c253b3fa6a62a9f"
+    },
+    {
+      "id": "19",
+      "template_sha256": "fb8dcc25f17aaefbcdb59fd2763ae0a4a6b30c36eddf6e4e67e058739fc58908",
+      "example_sha256": "66445b18b969b7cbc6d2da3886339dfc9ce42ecf6b45fbe66c881909519416cd"
+    },
+    {
+      "id": "20",
+      "template_sha256": "7c54d0e6c2d8b099e5953068841fb3935da1fbeb6153a9f66c9dcde3776314e1",
+      "example_sha256": "97baf8b32862f4b8707f9e101ad449397f267fa772efcd3139cf5b8308ae5bec"
+    },
+    {
+      "id": "21",
+      "template_sha256": "97fe4195207c24f5bc07c8e504c3160816bea7e924dcda3757fd54214fbf4822",
+      "example_sha256": "bcd3f5b76162a9d766000a532b238db4285bc43c2b7f6001ab5a78b4625d1417"
+    },
+    {
+      "id": "22",
+      "template_sha256": "10bfb4c2c9720ec24f0305d5f0f90831dd43b1c89f9b312945d729ba971c59f7",
+      "example_sha256": "a1039ca270a1222ac0d2e153aec38e7658d92ec346f7145145de3c70b0643da7"
+    },
+    {
+      "id": "23",
+      "template_sha256": "6b96acfc29d72885b64e9a5193c10bdacbd6054200ece81a1c9c62d99a84cf2c",
+      "example_sha256": "ad34f6caae2f603d61ac92af05babdf9dabf615b9be57fc3ffa195958c34fd50"
+    },
+    {
+      "id": "24",
+      "template_sha256": "afbe5bc3190220c7f574a9261a23e2db2dde9852ff036005389ff842c71ce06e",
+      "example_sha256": "133e292c16a06484a40a87c1d30a5e4c1399db2b7b3b5a02cf3d31b002fceeee"
+    },
+    {
+      "id": "25",
+      "template_sha256": "b2692caf6838f89f6126c49be8923852b55309fe98d193ced548c0965c2523a7",
+      "example_sha256": "5ce4f048bc1fcf45c16c032b24498489261e2d4dde3ddd7db1c521383996580b"
+    }
+  ],
+  "docs": [
+    "https://agentskills.io/specification",
+    "https://code.claude.com/docs/en/skills",
+    "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills/"
+  ]
+}

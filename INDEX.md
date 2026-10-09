@@ -9,6 +9,9 @@ Detailed catalog of all skills in this repo. For installation see [README.md](./
 - [SEO + content](#seo--content)
 - [Research + verification](#research--verification)
 - [Productivity + hygiene](#productivity--hygiene)
+- [Marketing documental: 25 skills](#marketing-documental-25-skills)
+
+Catálogo actual: 29 skills. Las cuatro fichas históricas se conservan; las 25 documentales se verifican separadamente.
 
 ---
 
@@ -156,6 +159,40 @@ Suggested workflow for a new SEO engagement:
 | deep-research | as published in [ai-research-skills](https://github.com/AlfonsoSBLA/ai-research-skills) | 2026 |
 | qa-bot | as published in [ai-research-skills](https://github.com/AlfonsoSBLA/ai-research-skills) | 2026 |
 | token-hygiene | as published in [claude-token-hygiene](https://github.com/AlfonsoSBLA/claude-token-hygiene) | 2026 |
+
+## Marketing documental: 25 skills
+
+Versión 2.0.0. Datos suministrados; sin claves, llamadas externas ni acciones ejecutadas.
+
+| ID | Skill | Uso |
+|---|---|---|
+| 01 | [g4u-plan-cortes-video](skills/g4u-plan-cortes-video/SKILL.md) | Plan de cortes de vídeo |
+| 02 | [g4u-brief-seo](skills/g4u-brief-seo/SKILL.md) | Brief SEO con datos aportados |
+| 03 | [g4u-contenido-con-fuentes](skills/g4u-contenido-con-fuentes/SKILL.md) | Brief y redacción con fuentes |
+| 04 | [g4u-email-revision-humana](skills/g4u-email-revision-humana/SKILL.md) | Borrador genérico de email |
+| 05 | [g4u-ficha-experimento](skills/g4u-ficha-experimento/SKILL.md) | Ficha de experimento |
+| 06 | [g4u-plan-investigacion](skills/g4u-plan-investigacion/SKILL.md) | Plan de investigación de audiencia |
+| 07 | [g4u-guion-entrevista](skills/g4u-guion-entrevista/SKILL.md) | Guion de entrevista no inductiva |
+| 08 | [g4u-sintesis-entrevistas](skills/g4u-sintesis-entrevistas/SKILL.md) | Síntesis de notas y contradicciones |
+| 09 | [g4u-encuesta-diagnostico](skills/g4u-encuesta-diagnostico/SKILL.md) | Encuesta breve de diagnóstico |
+| 10 | [g4u-comparativa-alternativas](skills/g4u-comparativa-alternativas/SKILL.md) | Comparativa de alternativas con evidencia |
+| 11 | [g4u-posicionamiento](skills/g4u-posicionamiento/SKILL.md) | Documento de posicionamiento provisional |
+| 12 | [g4u-matriz-mensajes](skills/g4u-matriz-mensajes/SKILL.md) | Matriz de beneficios, pruebas y objeciones |
+| 13 | [g4u-mapa-contenidos](skills/g4u-mapa-contenidos/SKILL.md) | Mapa de contenidos por preguntas e intención |
+| 14 | [g4u-calendario-editorial](skills/g4u-calendario-editorial/SKILL.md) | Calendario editorial por dependencias |
+| 15 | [g4u-reutilizacion-activo](skills/g4u-reutilizacion-activo/SKILL.md) | Plan de reutilización de un activo fuente |
+| 16 | [g4u-brief-campana](skills/g4u-brief-campana/SKILL.md) | Brief de campaña con dependencias y límites |
+| 17 | [g4u-estructura-landing](skills/g4u-estructura-landing/SKILL.md) | Estructura y textos de una landing |
+| 18 | [g4u-revision-conversion](skills/g4u-revision-conversion/SKILL.md) | Revisión de fricciones de una página |
+| 19 | [g4u-edicion-texto](skills/g4u-edicion-texto/SKILL.md) | Edición de texto con registro de cambios |
+| 20 | [g4u-brief-recurso-descargable](skills/g4u-brief-recurso-descargable/SKILL.md) | Brief de recurso descargable desde necesidades |
+| 21 | [g4u-secuencia-bienvenida](skills/g4u-secuencia-bienvenida/SKILL.md) | Secuencia de bienvenida con reglas de salida |
+| 22 | [g4u-secuencia-educativa](skills/g4u-secuencia-educativa/SKILL.md) | Secuencia educativa según dudas |
+| 23 | [g4u-onboarding-primer-valor](skills/g4u-onboarding-primer-valor/SKILL.md) | Plan de onboarding hacia una primera tarea |
+| 24 | [g4u-plan-medicion](skills/g4u-plan-medicion/SKILL.md) | Plan de medición con diccionario de métricas |
+| 25 | [g4u-informe-resultados](skills/g4u-informe-resultados/SKILL.md) | Informe de resultados y decisiones limitadas |
+
+Cada carpeta incluye contrato, ejemplo completo, casos límite y licencia. No sustituyen al orquestador g4u-seo ni a investigación real.
 
 ## Roadmap
 

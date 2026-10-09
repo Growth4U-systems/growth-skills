@@ -1,75 +1,155 @@
-# growth-skills
+# GrowthSkills
 
-> Open-source Claude Code skills by **[Growth4U](https://github.com/Growth4U-systems)** — a growth consultancy based in Madrid.
+**Procedimientos reutilizables de Growth4U para investigar, decidir y preparar trabajo de marketing con evidencia.** No son un motor de campañas ni una promesa de resultados: una skill guía a tu agente; no garantiza que el modelo siga bien cada instrucción.
 
-A curated collection of production-tested skills we use day-to-day. Drop them into your `.claude/skills/` directory and Claude Code picks them up automatically.
+El catálogo contiene **29 skills**: cuatro herramientas/orquestadores existentes y **25 procedimientos de marketing** con entradas explícitas, contrato de salida, ejemplo completo, casos límite y licencia portable. Las 25 se integran desde [`marketing-skills-25`](https://github.com/Growth4U-systems/marketing-skills-25/tree/4d54e83f25e37b2ee467f6cd216ec70211d1e228), conservando identidades y atribución; no necesitas instalar ambos catálogos.
 
-## What's a Claude Code skill?
+[Catálogo y dependencias](INDEX.md) · [Instalación segura](#instalación-segura) · [Cómo usarlas](#cómo-usarlas) · [Pruebas y límites](#pruebas-y-límites) · [Contribuir](CONTRIBUTING.md) · [Procedencia](docs/marketing/PROCEDENCIA.md)
 
-A skill is a `SKILL.md` file (with optional `references/`, `scripts/`, and `assets/` folders) that you place in `.claude/skills/<skill-name>/`. Claude Code reads its frontmatter (name + description) and decides when to invoke it. When triggered, the skill's body and bundled resources become available to guide the work.
+## Qué valor aportan
 
-Skills make Claude Code reproducible across sessions and clients. Instead of re-explaining "how do we do X here" every time, you encode it once and let the model follow it.
+- **Una decisión, no solo una plantilla:** cada procedimiento explica qué comparar, cuándo bloquear, qué no puede inferirse y qué evidencia cambiaría la recomendación.
+- **Entregas revisables:** ejemplos con todos los campos del contrato, fuentes con ID, datos ausentes y un estado final explícito.
+- **Especialización útil:** saltos de encuesta, capacidad editorial por rol, denominadores instrumentados, métricas directas frente a proxies y reglas de experimento definidas antes de ver resultados.
+- **Sin ejecución oculta en las 25 de marketing:** no contienen scripts, no necesitan claves ni llamadas externas y no envían, publican, reclutan, instrumentan ni gastan. Los orquestadores históricos tienen dependencias distintas: revisa sus fichas antes de usarlos.
 
-## Skills included
+## Elige por tarea
 
-See [INDEX.md](./INDEX.md) for the full table with descriptions, triggers, dependencies, and MCP requirements.
+### Orquestación y herramientas existentes
 
-| Skill | What it does | When it triggers |
-|-------|--------------|------------------|
-| [g4u-seo](./skills/g4u-seo/) | End-to-end SEO orchestrator — auditorías, landings comerciales, blog editorial, programmatic clusters. Includes accessibility + performance handoff briefs. | "auditar SEO", "crear landing SEO", "rankear en ChatGPT/Perplexity", "GEO", "blog SEO", "cluster SEO" |
-| [deep-research](./skills/deep-research/) | Multi-source deep research with structured analysis and mandatory QA verification. Produces sourced, entity-by-entity reports. | "deep research", "investiga", "research for", "competitive analysis", "benchmark" |
-| [qa-bot](./skills/qa-bot/) | Critical review using Chain of Verification (CoVe). Finds errors, logic gaps, and unverifiable claims in any document. | "QA this", "review critically", "find the problems", "devil's advocate" |
-| [token-hygiene](./skills/token-hygiene/) | Audit and reduce hidden token overhead in Claude Code conversations. Monthly skill + automation. | "audit my token usage", "token hygiene", "reduce context overhead" |
+Estos cuatro directorios se conservan sin cambios de contenido en la integración. Sus capacidades no se han revalidado con esta suite de marketing.
 
-## Install
+| Skill | Para qué sirve | Dependencias y límites |
+|---|---|---|
+| [g4u-seo](skills/g4u-seo/SKILL.md) | Orquestación SEO end-to-end: auditorías, páginas, contenido y handoffs | Coordina otras skills y herramientas; consulta su stack. No equivale al brief documental de abajo. |
+| [deep-research](skills/deep-research/SKILL.md) | Investigación multifuente con QA y entrega por entidades | Herramientas de investigación y acceso a fuentes; comprobar disponibilidad y permisos. |
+| [qa-bot](skills/qa-bot/SKILL.md) | Revisión crítica con Chain of Verification | La verificación depende de disponer de fuentes y herramientas; no convierte inferencias en hechos. |
+| [token-hygiene](skills/token-hygiene/SKILL.md) | Diagnóstico del contexto y consumo de tokens | Incluye shell y automatización local; revisar scripts y entorno antes de instalar/ejecutar. |
 
-For any skill: copy the folder into `.claude/skills/` in your project (or `~/.claude/skills/` for global use). Start a new Claude Code session and the skill auto-loads.
+### Investigación y estrategia
+
+| Skill | Entrada → salida útil |
+|---|---|
+| [g4u-plan-investigacion](skills/g4u-plan-investigacion/SKILL.md) | Decisión, incertidumbres y límites → preguntas, métodos, señales y condiciones de parada |
+| [g4u-guion-entrevista](skills/g4u-guion-entrevista/SKILL.md) | Objetivo, episodio y condiciones de registro → guion neutral con tiempos y consentimiento pendiente explícito |
+| [g4u-sintesis-entrevistas](skills/g4u-sintesis-entrevistas/SKILL.md) | Notas autorizadas con IDs → observaciones, contraejemplos, hipótesis y límites de generalización |
+| [g4u-encuesta-diagnostico](skills/g4u-encuesta-diagnostico/SKILL.md) | Decisión, audiencia y privacidad → cuestionario con saltos, omisiones y salida segura |
+| [g4u-comparativa-alternativas](skills/g4u-comparativa-alternativas/SKILL.md) | Criterios y fuentes por alternativa → comparación que distingue ausencia de información de ausencia de capacidad |
+| [g4u-posicionamiento](skills/g4u-posicionamiento/SKILL.md) | Segmento, problema, alternativa y pruebas → propuesta de posicionamiento y contraste, sin superioridad inventada |
+| [g4u-matriz-mensajes](skills/g4u-matriz-mensajes/SKILL.md) | Necesidades, capacidades y pruebas → mensajes por situación con evidencia y límites |
+
+### Contenido y comunicación
+
+| Skill | Entrada → salida útil |
+|---|---|
+| [g4u-plan-cortes-video](skills/g4u-plan-cortes-video/SKILL.md) | Transcripción marcada → cortes candidatos que conservan contexto y negaciones; no edición de vídeo |
+| [g4u-brief-seo](skills/g4u-brief-seo/SKILL.md) | Pregunta, intención y fuentes → brief editorial con huecos; no investigación SERP automática |
+| [g4u-contenido-con-fuentes](skills/g4u-contenido-con-fuentes/SKILL.md) | Brief y fuentes autorizadas → texto con trazabilidad de afirmaciones |
+| [g4u-email-revision-humana](skills/g4u-email-revision-humana/SKILL.md) | Objetivo, relación permitida y oferta → email completo no enviado con condiciones de revisión |
+| [g4u-mapa-contenidos](skills/g4u-mapa-contenidos/SKILL.md) | Necesidades e inventario → mapa de piezas con reutilización, dependencias y señales de solapamiento |
+| [g4u-calendario-editorial](skills/g4u-calendario-editorial/SKILL.md) | Piezas, dependencias y capacidad por rol → calendario condicionado a carga y aprobación reales |
+| [g4u-reutilizacion-activo](skills/g4u-reutilizacion-activo/SKILL.md) | Activo autorizado y destinos → derivados concretos sin perder advertencias ni ampliar derechos |
+| [g4u-edicion-texto](skills/g4u-edicion-texto/SKILL.md) | Texto y hechos aprobados → versión revisada y registro de cambios de significado |
+| [g4u-brief-recurso-descargable](skills/g4u-brief-recurso-descargable/SKILL.md) | Necesidades y capacidad → recurso mínimo con fragmento resuelto; no captación implícita |
+
+### Campañas, experiencia y lifecycle
+
+| Skill | Entrada → salida útil |
+|---|---|
+| [g4u-brief-campana](skills/g4u-brief-campana/SKILL.md) | Objetivo, oferta y restricciones → activos y métricas que no confunden finalización con comprensión |
+| [g4u-estructura-landing](skills/g4u-estructura-landing/SKILL.md) | Audiencia, oferta y hechos → orden de secciones, texto y acción; no una página implementada |
+| [g4u-revision-conversion](skills/g4u-revision-conversion/SKILL.md) | Material de página disponible → hipótesis de fricción limitadas a lo observable |
+| [g4u-secuencia-bienvenida](skills/g4u-secuencia-bienvenida/SKILL.md) | Solicitud, objetivo y salida → mensajes completos con reevaluación de baja antes de cada paso |
+| [g4u-secuencia-educativa](skills/g4u-secuencia-educativa/SKILL.md) | Dudas, hechos y frecuencia → explicación progresiva con salida y práctica opcional |
+| [g4u-onboarding-primer-valor](skills/g4u-onboarding-primer-valor/SKILL.md) | Tarea y flujo → primer valor observable con estados vacío, error y recuperación |
+
+### Experimentos y medición
+
+| Skill | Entrada → salida útil |
+|---|---|
+| [g4u-ficha-experimento](skills/g4u-ficha-experimento/SKILL.md) | Hipótesis y parámetros aportados → diseño previo, sin inventar regla, ventana o ganador |
+| [g4u-plan-medicion](skills/g4u-plan-medicion/SKILL.md) | Recorrido y pregunta → diccionario con eventos del numerador y denominador, orden y deduplicación |
+| [g4u-informe-resultados](skills/g4u-informe-resultados/SKILL.md) | Agregados comparables → tasas, puntos porcentuales, cambio relativo y decisiones no causales |
+
+## Instalación segura
+
+**Python 3.10 o superior**, biblioteca estándar, sin `pip`. Primero revisa el contenido y [`tools/install_local.py`](tools/install_local.py). Instalar aquí significa copiar carpetas; **no prueba la carga ni el comportamiento de un runtime**.
 
 ```bash
-# Install one specific skill globally
-mkdir -p ~/.claude/skills
-git clone https://github.com/Growth4U-systems/growth-skills.git /tmp/growth-skills
-cp -R /tmp/growth-skills/skills/g4u-seo ~/.claude/skills/
-
-# Or install all skills at once
-cp -R /tmp/growth-skills/skills/* ~/.claude/skills/
+git clone https://github.com/Growth4U-systems/growth-skills.git
+cd growth-skills
+python3 -m unittest discover -s tests -v
 ```
 
-To verify a skill loaded: `claude --help` or check `claude config list-skills` (commands depend on Claude Code version).
+Para reproducir una revisión, usa el SHA de su PR/release en lugar de asumir que `main` sigue igual.
 
-## Philosophy
+### Prueba aislada, sin tocar tu agente
 
-These skills follow a few principles we've found work in real client engagements:
+```bash
+# Crea una carpeta nueva; aborta si ya existe.
+mkdir ../growthskills-sandbox
+# Plan: no escribe nada.
+python3 tools/install_local.py --destination ../growthskills-sandbox/skills --all-marketing
+# Copia explícita de las 25, manteniendo licencias y referencias.
+python3 tools/install_local.py --destination ../growthskills-sandbox/skills --all-marketing --apply
+```
 
-1. **Orchestrators over reinventors** — when 30+ specialized skills already exist in the ecosystem, write skills that compose them (g4u-seo) instead of duplicating logic.
-2. **Empirical before prescriptive** — detect actual stack/state before generating recommendations (see `g4u-seo` stack detection).
-3. **Handoff briefs over auto-fixes** — diagnose deeply, but let the human (or another skill) execute. Each finding includes severity, location, fix steps, recommended skill, files to touch, effort estimate, verification method.
-4. **Doctrine over defaults** — every output respects the same conventions (5-section + FAQ schema for SEO pages, HTML output for client deliverables, etc.).
-5. **Context-aware without hardcoding** — skills read your client/project context if you point them to it, but never assume structure or create context themselves.
+`--all-marketing` incluye solo las 25 del manifiesto, **no** los cuatro orquestadores. `--all` es un alias del mismo conjunto. Para una sola skill:
 
-## Contributing
+```bash
+python3 tools/install_local.py --destination ../growthskills-sandbox/seleccion \
+  --skill g4u-plan-medicion --apply
+```
 
-Open an issue or PR. Skills should be:
-- Self-contained (work in any `.claude/skills/` directory)
-- Documented (SKILL.md frontmatter + clear body)
-- Tested (real-world use case backing the skill)
-- Honest about dependencies (MCPs, API keys, external tools)
+El instalador rechaza duplicados, colisiones, rutas internas al repositorio y enlaces simbólicos. Copia primero a staging y revierte los destinos que creó si encuentra un error normal. **No sobrescribe y no es una transacción resistente a corte de energía:** si el proceso se interrumpe abruptamente, inspecciona su lock y staging antes de limpiar o reintentar. No ofrece un modo `--force`.
 
-## Related work
+### Activación en tu runtime: paso separado
 
-- [Anthropic's official skills](https://github.com/anthropics/skills) — canonical examples and references
-- [AY Skills by Walid Boulanouar](https://github.com/walidboulanouar/Ay-Skills) — well-curated collection by AY Automate
-- [AgriciDaniel claude-seo](https://github.com/AgriciDaniel/claude-seo) — full SEO suite (used by `g4u-seo` as one of its underlying engines)
-- [Corey Haines marketing skills](https://github.com/coreyhaines/) — comprehensive marketing skill set
+- **Claude Code:** tras revisar, elige explícitamente `.claude/skills/` del proyecto o `~/.claude/skills/`. Consulta [documentación oficial](https://code.claude.com/docs/en/skills) para descubrir/verificar skills en tu versión; no se presupone un comando `config list-skills`.
+- **Hermes Agent:** consulta [Skills System](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills/) para el directorio del perfil o directorios externos. No copies a otro perfil por defecto.
+- Los recursos de cada skill de marketing enlazan solo dentro de su carpeta y se pueden copiar por separado. Los cuatro orquestadores históricos requieren revisión propia de referencias, scripts y dependencias.
 
-## License
+Ningún test de este repositorio instala en una configuración activa ni confirma compatibilidad funcional de todos los runtimes.
 
-MIT — see [LICENSE](./LICENSE).
+## Cómo usarlas
 
-## About Growth4U
+1. Elige **una tarea concreta**, lee `SKILL.md` y reúne sus entradas obligatorias. Los ejemplos no rellenan los huecos del caso real.
+2. Entrega solo fuentes minimizadas y autorizadas. Separa permisos de diseño de permisos de ejecución.
+3. Pide explícitamente la skill y una salida conforme a `assets/salida.md`.
+4. Revisa fuentes, cálculo, límites y **Estado final**. `Bloqueado` es un resultado válido; no autoriza completar datos por intuición.
 
-Growth consultancy based in Madrid. We help startups and scale-ups in B2B SaaS, fintech, and regulated industries.
+Ejemplo de encargo:
 
-- Website: [growth4u.io](https://growth4u.io)
-- Founder: [Alfonso Sainz de Baranda](https://linkedin.com/in/alfonsosainzdebaranda)
-- More tools: [Growth4U-systems on GitHub](https://github.com/Growth4U-systems)
+> Usa `g4u-plan-medicion`. Te aportaré objetivo, recorrido, población, ventana y restricciones. Define también los eventos del denominador y prueba con datos sintéticos qué pasa con dos errores en una misma sesión. No implementes tracking ni atribuyas comprensión a una finalización.
+
+Encadenamientos posibles, **sin ejecución automática**:
+
+- `plan-investigacion` → `guion-entrevista` → investigación humana autorizada → `sintesis-entrevistas` → `posicionamiento`.
+- `brief-seo` → `contenido-con-fuentes` → `edicion-texto` → revisión humana. Para stack o investigación SEO, evalúa primero `g4u-seo`: no le atribuyas esas capacidades al brief.
+- `ficha-experimento` → diseño revisado → implementación autorizada aparte → `plan-medicion` → datos reales validados → `informe-resultados`.
+
+## Pruebas y límites
+
+La suite offline cubre inventario **25/25**, contratos y ejemplos, casos escritos, portabilidad, licencias, patrones de privacidad, copia aislada y regresiones de vídeo, experimento, entrevista, encuesta, calendario, campaña y medición. También inyecta fallos de instalación para verificar rollback y preservación de contenido existente.
+
+**Qué no demuestra:** no ejecuta prompts con un modelo, no valida impacto comercial, no prueba consentimiento real y no certifica ausencia absoluta de datos sensibles. Los casos de aceptación son respuestas esperadas; los oráculos numéricos solo verifican cálculos y reglas del ejemplo. No confundirlos con evaluaciones LLM ni resultados de clientes. Consulta [método y pruebas](docs/marketing/VERIFICACION.md) y [trazabilidad de mejoras](docs/marketing/MEJORAS.md).
+
+## Principios y contribución
+
+Conservamos la filosofía del proyecto: **orquestar antes de duplicar**, observar antes de prescribir, entregar handoffs antes de ejecutar cambios y declarar dependencias sin asumir el contexto del cliente. Una skill documental no necesita inventar conectores para ser útil.
+
+Abre un issue o PR siguiendo [CONTRIBUTING.md](CONTRIBUTING.md): caso de uso concreto, evidencia para reglas nuevas, ejemplo completo, caso negativo, pruebas y atribución. No subir secretos, notas de clientes ni capturas privadas. Los scripts o integraciones nuevas necesitan revisión separada de efectos, credenciales y coste.
+
+## Licencia y trabajos relacionados
+
+MIT según [LICENSE](LICENSE). Las 25 skills incluyen licencia portable. Cinco conservan atribución MIT de **Single Grain** por adaptaciones del repositorio de Eric Siu; véanse [avisos de terceros](THIRD_PARTY_NOTICES.md), [procedencia](docs/marketing/PROCEDENCIA.md) y [fuentes fijadas](docs/marketing/SOURCES.json). MIT sobre el procedimiento no concede permisos sobre materiales que un usuario aporte después.
+
+- [Anthropic Skills](https://github.com/anthropics/skills)
+- [AY Skills](https://github.com/walidboulanouar/Ay-Skills)
+- [AgriciDaniel claude-seo](https://github.com/AgriciDaniel/claude-seo)
+- [Corey Haines](https://github.com/coreyhaines/)
+- [Eric Siu / ai-marketing-skills](https://github.com/ericosiu/ai-marketing-skills)
+
+## Growth4U
+
+Consultoría de growth con base en Madrid, orientada a startups y scale-ups B2B SaaS, fintech e industrias reguladas. [Web](https://growth4u.io) · [Alfonso Sainz de Baranda](https://linkedin.com/in/alfonsosainzdebaranda) · [Más herramientas](https://github.com/Growth4U-systems).
